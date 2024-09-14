@@ -16,10 +16,10 @@ const Sidebar = () => {
           
           return (
             <Link
-              href={link.route} // Fixed from Link.route to link.route
+              href={link.route}
               key={link.label}
               className={cn('flex gap-4 items-center p-4 rounded-lg justify-start', {
-                'bg-dark-2': isActive,
+                'bg-blue-1': isActive,
               })}
             >
             
@@ -30,7 +30,7 @@ const Sidebar = () => {
               height={24}
             />
 
-            <p className="tex-lg font-semibold max-lg:hidden">
+            <p className="text-lg font-semibold max-lg:hidden">
               {link.label}
             </p>
             
