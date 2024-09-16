@@ -1,11 +1,17 @@
 import React from 'react';
 
-
 const Home = () => {
   const now = new Date();
 
-  const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-IN', { dateStyle: 'full' })).format(now);
+  // Format the time for India (Asia/Kolkata timezone)
+  const time = now.toLocaleTimeString('en-IN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'Asia/Kolkata'
+  });
+
+  // Format the date for India
+  const date = new Intl.DateTimeFormat('en-IN', { dateStyle: 'full', timeZone: 'Asia/Kolkata' }).format(now);
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
@@ -20,8 +26,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 };
