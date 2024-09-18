@@ -3,15 +3,7 @@ import React, { useState } from 'react'
 import HomeCard from './HomeCard'
 import { useRouter } from 'next/navigation'
 
-interface HomeCardProps {
-  className: string,
-  img: string,
-  title: string,
-  description: string,
-  handleClick: () => void;
-}
-
-const MeetingTypeList = ({className, img, title, description, handleClick}: HomeCardProps) => {
+const MeetingTypeList = () => {
   const router = useRouter();
   const [meetingState, setMeetingState] =
     useState<'isSchedulemeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
