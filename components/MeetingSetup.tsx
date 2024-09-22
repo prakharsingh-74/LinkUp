@@ -1,13 +1,24 @@
 'use client'
-import { useCall, VideoPreview } from '@stream-io/video-react-sdk'
+import { DeviceSettings, useCall, VideoPreview } from '@stream-io/video-react-sdk'
 import React, { useEffect, useState } from 'react'
+import { Button } from './ui/button'
 
-const MeetingSetup = () => {
+const MeetingSetup = ({setisSetupComplete}: {setisSetupComplete: (value: boolean) => void}) => {
   const [isMicCamToggledOn, setisMicCamToggledOn] = useState(false)
   const call = useCall();
 
-  useEffect(() => {
+  if(!call){
+    throw new Error('usecall must be used within Streamcall component')
+  }
 
+  useEffect(() => {
+      if(isMicCamToggledOn){
+        call?.camera.disable()
+        call?.microphone.disable();
+      }else{
+        call?.camera.enable()
+        call?.microphone.enable()
+      }
   }, [isMicCamToggledOn, call?.camera, call?.microphone])
 
 
@@ -17,6 +28,24 @@ const MeetingSetup = () => {
         Setup
       </h1>
       <VideoPreview />
+      <div className="flex h-16 items-center justify-center gap-3">
+         <label className='flex items-center justify-center gap-2 font-medium'>
+            <input
+              type='checkbox'
+              checked={isMicCamToggledOn}
+              onChange={(e) => setisMicCamToggledOn(e.target.checked)}
+            />
+            Join with mic & camera off
+         </label>
+         <DeviceSettings/>
+      </div>
+      <Button className="rounded-md bg-green-500 px-4 py-2.5" onClick={() => {
+        call.join();
+
+        setisSetupComplete(true);
+      }}>
+          Join Meeting
+      </Button>
     </div>
   )
 }
