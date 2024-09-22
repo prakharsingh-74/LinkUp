@@ -1,14 +1,12 @@
 'use client';
-
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 import HomeCard from './HomeCard';
 import MeetingModal from './MeetingModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { useUser } from '@clerk/nextjs';
 import Loader from './Loader';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from "@/hooks/use-toast"
 
 
 const initialValues = {
@@ -144,7 +142,7 @@ const MeetingTypeList = () => {
         buttonText="Join Meeting"
         handleClick={() => router.push(values.link)}
       >
-        
+
       </MeetingModal>
 
       <MeetingModal
