@@ -10,6 +10,9 @@ import '@stream-io/video-react-sdk/dist/css/styles.css';
 export const metadata: Metadata = {
   title: "LinkUp",
   description: "Video conferencing Web App",
+  icons:{
+    icon: '/icons/logo.svg'
+  }
 };
 
 export default function RootLayout({
