@@ -44,12 +44,13 @@ A fully-featured video conferencing web application built using Next.js, TypeScr
 
 Open http://localhost:3000 in your browser to see the app in action.
 
-##📝 Usage
-Sign up / Log in: Users are authenticated through Clerk.
-Join / Create a Room: Start or join a video conference.
-Chat: Send and receive messages in real time during the call.
+## 📝 Usage
 
-##📁 Project Structure
+1. Sign up / Log in: Users are authenticated through Clerk.
+2. Join / Create a Room: Start or join a video conference.
+3. Chat: Send and receive messages in real time during the call.
+
+## 📁 Project Structure
 Here's an overview of the project's structure:
 
 ├── components    # Reusable UI components
@@ -59,12 +60,13 @@ Here's an overview of the project's structure:
 ├── styles        # Global styles
 └── README.md     # Project documentation
 
-🧩 Key Libraries
+
+## 🧩 Key Libraries
 @clerk/nextjs: For integrating Clerk's authentication in Next.js.
 stream-chat-react: Components for the chat feature.
 next-auth: Optional, if needed for additional auth setups.
 
-⚙️ Deployment
+
+## ⚙️ Deployment
 To deploy this project:
-Done on the vercel
 Set up your environment variables in your deployment platform.
