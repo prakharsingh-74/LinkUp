@@ -27,7 +27,7 @@ A fully-featured video conferencing web application built using Next.js, TypeScr
    
 2. **Install dependencies:**
    npm install
-      # or
+      ##OR
    yarn install
    
 3. Set up environment variables:
