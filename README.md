@@ -50,23 +50,7 @@ Open http://localhost:3000 in your browser to see the app in action.
 2. Join / Create a Room: Start or join a video conference.
 3. Chat: Send and receive messages in real time during the call.
 
-## 📁 Project Structure
-Here's an overview of the project's structure:
-
-├── components    # Reusable UI components
-├── pages         # Next.js pages and API routes
-├── lib           # Utility functions and external library setups
-├── public        # Public assets
-├── styles        # Global styles
-└── README.md     # Project documentation
-
-
 ## 🧩 Key Libraries
 @clerk/nextjs: For integrating Clerk's authentication in Next.js.
 stream-chat-react: Components for the chat feature.
 next-auth: Optional, if needed for additional auth setups.
-
-
-## ⚙️ Deployment
-To deploy this project:
-Set up your environment variables in your deployment platform.
